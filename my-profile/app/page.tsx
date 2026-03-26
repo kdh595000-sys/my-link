@@ -1,64 +1,96 @@
-import { Code2, Mail } from "lucide-react";
+import { Code2, Mail, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-black font-sans overflow-hidden selection:bg-purple-300 selection:text-purple-900">
+    <div className="min-h-screen bg-yellow-300 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-sans p-4 md:p-8 lg:p-12 selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
       
-      {/* Animated Background Blobs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none flex justify-center items-center">
-        <div className="absolute w-96 h-96 bg-purple-400/40 dark:bg-purple-600/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob top-1/4 left-1/4"></div>
-        <div className="absolute w-96 h-96 bg-pink-400/40 dark:bg-pink-600/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob2 animation-delay-2000 top-1/3 right-1/4"></div>
-        <div className="absolute w-96 h-96 bg-indigo-400/40 dark:bg-indigo-600/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob3 animation-delay-4000 bottom-1/4 left-1/3"></div>
-      </div>
+      {/* Header / Nav */}
+      <header className="flex justify-between items-center mb-8 md:mb-12 border-4 border-black dark:border-white bg-white dark:bg-black p-4 md:px-8 shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff]">
+        <span className="text-xl md:text-3xl font-black uppercase tracking-tighter">PORTFOLIO</span>
+        <span className="text-sm md:text-xl font-bold uppercase border-2 border-black dark:border-white px-3 py-1 bg-cyan-300 dark:bg-cyan-800 text-black dark:text-white transform -rotate-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff]">
+          VIBE CODING
+        </span>
+      </header>
 
-      {/* Main Glassmorphism Card */}
-      <main className="relative z-10 flex flex-col items-center bg-white/40 dark:bg-zinc-900/40 backdrop-blur-2xl border border-white/40 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] rounded-3xl p-10 max-w-lg w-full mx-4 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] dark:hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+      {/* Main Grid Layout */}
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-min">
         
-        {/* Avatar Section */}
-        <div className="relative group mb-6">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
-          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-            {/* If there is an actual avatar image, we'd use Next Image here. For now, a placeholder */}
-            <span className="text-5xl">👨‍💻</span>
+        {/* Big Hero Section - Spans 2 cols on Desktop */}
+        <section className="col-span-1 md:col-span-2 lg:col-span-2 border-4 border-black dark:border-white bg-pink-400 dark:bg-pink-700 p-6 md:p-10 lg:p-12 shadow-[6px_6px_0_0_#000] md:shadow-[8px_8px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] md:dark:shadow-[8px_8px_0_0_#fff] flex flex-col justify-center transition-transform hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[10px_10px_0_0_#000] dark:hover:shadow-[10px_10px_0_0_#fff] duration-200">
+          <div className="inline-block w-fit mb-6 px-4 py-2 border-2 border-black dark:border-white bg-white dark:bg-black text-black dark:text-white text-sm md:text-base font-bold uppercase transform -rotate-1 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff]">
+            Student & Developer
           </div>
-        </div>
-
-        {/* Bio Section */}
-        <div className="text-center space-y-3 mb-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 drop-shadow-sm">
-            김도현
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.05] tracking-tighter mb-6 break-keep">
+            HELLO,<br/>
+            I AM <span className="text-white dark:text-yellow-400">김도현</span>
           </h1>
-          <p className="text-lg font-medium text-zinc-700 dark:text-zinc-300">
-            바이브 코딩을 배우고 있는 대학생
+          <p className="text-base sm:text-lg md:text-2xl font-bold border-l-8 border-black dark:border-white pl-4 max-w-2xl bg-white/20 dark:bg-black/20 p-3 leading-relaxed">
+            비전공자이지만 프로그래밍에 관심이 많으며, 강렬한 색채와 볼드한 타이포그래피를 활용한 네오브루탈리즘(Neobrutalism) 스타일 랜딩 페이지를 만들고 있습니다.
           </p>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-sm mx-auto leading-relaxed">
-            비전공자이지만 프로그래밍에 관심이 많으며, 가장 트렌디하고 예쁜 결과물을 만들어내는 것을 좋아합니다. 항상 새로운 기술에 도전하고 있습니다.
-          </p>
-        </div>
+        </section>
 
-        {/* Skills/Tags */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8 w-full">
-          {["React", "Next.js", "Tailwind CSS", "Vibe Coding"].map((tag) => (
-            <span key={tag} className="px-3 py-1 text-xs font-semibold text-purple-700 dark:text-purple-300 bg-purple-100/50 dark:bg-purple-900/30 rounded-full border border-purple-200 dark:border-purple-800/50 backdrop-blur-md">
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex w-full gap-4">
-          <button className="flex-1 group relative flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-semibold transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/25 active:scale-95">
-            <Mail className="w-4 h-4" />
-            <span>Contact</span>
-          </button>
+        {/* Contact Module */}
+        <section className="col-span-1 lg:col-span-1 border-4 border-black dark:border-white bg-cyan-400 dark:bg-cyan-800 p-6 md:p-8 shadow-[6px_6px_0_0_#000] md:shadow-[8px_8px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] md:dark:shadow-[8px_8px_0_0_#fff] flex flex-col justify-between transition-transform hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[10px_10px_0_0_#000] dark:hover:shadow-[10px_10px_0_0_#fff] duration-200">
+          <div className="mb-6 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4 border-b-4 border-black dark:border-white pb-2 flex items-center justify-between">
+              CONTACT <ArrowRight className="w-8 h-8 md:w-10 md:h-10"/>
+            </h2>
+            <p className="text-base sm:text-lg font-bold">프로젝트 제안이나 협업 문의를 언제든 환영합니다.</p>
+          </div>
           
-          <button className="flex-1 group relative flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-white/50 dark:bg-zinc-800/50 text-zinc-900 dark:text-zinc-100 font-semibold border border-zinc-200 dark:border-zinc-700 transition-all hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:scale-[1.02] hover:shadow-lg hover:shadow-pink-500/10 active:scale-95">
-            <Code2 className="w-4 h-4" />
-            <span>Projects</span>
+          <button className="flex items-center justify-center gap-3 w-full border-4 border-black dark:border-white bg-white dark:bg-black text-black dark:text-white p-4 text-lg md:text-xl font-bold uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors active:translate-y-1 active:translate-x-1 active:shadow-none shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:shadow-[6px_6px_0_0_#000] dark:hover:shadow-[6px_6px_0_0_#fff]">
+            <Mail className="w-6 h-6" />
+            Send Email
           </button>
-        </div>
+        </section>
+
+        {/* Skills Tag Section */}
+        <section className="col-span-1 md:col-span-1 lg:col-span-1 border-4 border-black dark:border-white bg-white dark:bg-black p-6 md:p-8 shadow-[6px_6px_0_0_#000] md:shadow-[8px_8px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] md:dark:shadow-[8px_8px_0_0_#fff]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase mb-6 flex items-center gap-3">
+            <Code2 className="w-8 h-8 md:w-10 md:h-10 text-pink-500"/> SKILLS
+          </h2>
+          <div className="flex flex-wrap gap-2 md:gap-3">
+            {["React", "Next.js", "Tailwind CSS", "TypeScript", "UI/UX Design"].map((skill, index) => (
+              <span key={skill} className={`border-2 border-black dark:border-white px-2 py-1 md:px-3 md:py-1.5 font-bold text-sm md:text-lg ${
+                  index % 3 === 0 ? 'bg-yellow-300 dark:bg-yellow-600 text-black dark:text-white' : 
+                  index % 3 === 1 ? 'bg-cyan-300 dark:bg-cyan-600 text-black dark:text-white' : 
+                  'bg-pink-300 dark:bg-pink-600 text-black dark:text-white'
+                } hover:rotate-3 transition-transform duration-100 cursor-default shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff]`}>
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Project Links Section - Spans remaining columns */}
+        <section className="col-span-1 md:col-span-1 lg:col-span-2 border-4 border-black dark:border-white bg-green-400 dark:bg-green-700 p-6 md:p-8 shadow-[6px_6px_0_0_#000] md:shadow-[8px_8px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] md:dark:shadow-[8px_8px_0_0_#fff]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-6 drop-shadow-[2px_2px_0_#000] dark:drop-shadow-[2px_2px_0_#fff]">
+            FEATURED PROJECTS
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            {[1, 2].map((num) => (
+              <div key={num} className="h-full border-4 border-black dark:border-white bg-white dark:bg-black p-4 md:p-6 group hover:-translate-y-2 hover:-translate-x-2 transition-transform shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:shadow-[10px_10px_0_0_#000] dark:hover:shadow-[10px_10px_0_0_#fff] cursor-pointer">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl md:text-2xl font-black uppercase underline decoration-4 underline-offset-4">PROJECT {num}</h3>
+                  <ExternalLink className="w-5 h-5 md:w-6 md:h-6 group-hover:text-green-500 transition-colors" />
+                </div>
+                <p className="font-bold text-sm md:text-base text-zinc-700 dark:text-zinc-300 break-keep">
+                  이 프로젝트는 직관적이고 볼드한 디자인으로 사용자의 이목을 완벽하게 사로잡는 웹 애플리케이션입니다.
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
 
       </main>
+      
+      {/* Footer marquee or solid block */}
+      <footer className="mt-12 md:mt-20 border-4 border-black dark:border-white bg-black dark:bg-white text-white dark:text-black py-4 overflow-hidden relative shadow-[8px_8px_0_0_#fff] dark:shadow-[8px_8px_0_0_#000] transform -rotate-1">
+        <div className="whitespace-nowrap font-black uppercase text-2xl sm:text-3xl md:text-4xl tracking-widest text-center">
+          ⚡ NEXT.JS NEOBRUTALISM UI ⚡
+        </div>
+      </footer>
+
     </div>
   );
 }
